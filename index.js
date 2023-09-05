@@ -11,14 +11,10 @@ const cookieParser =require("cookie-parser")
 
 const errorHandler =require ("./middleWare/errorMiddleWare")
 const userRoute = require("./routes/userRoute");
+app.use(cors())
 
 
-// const authRoute = require("./routes/auth");
-// const postRoute = require("./routes/posts");
-// ROUTES
-// app.get("/", (req, res) => {
-//   res.send("my home page");
-// });
+
 
 //Error Middleware
 app.use(errorHandler)
@@ -50,7 +46,7 @@ app.use(cookieParser());
 app.use("/api/users", userRoute);
 
 
-const PORT = 8080;
+const PORT = 8000;
 app.listen(PORT, () => {
   console.log("Backend server is running on port",PORT);
 });
